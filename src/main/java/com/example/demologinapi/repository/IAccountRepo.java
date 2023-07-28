@@ -12,4 +12,7 @@ public interface IAccountRepo extends CrudRepository<Account, Integer> {
     @Query(value = "SELECT a FROM Account a where a.username= :username and a.password= :password")
     Account getAccountLoginHQL(@Param("username") String username,@Param("password") String password);
 
+
+    Account getAccountByUsername(String username);
+
 }
